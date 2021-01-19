@@ -4,8 +4,8 @@ const userSchema = mongoose.Schema(
     {
         name: {
             type: String,
-            required: true,
             trim: true,
+            default: null
         },
         phoneNumber: {
             type: Number,
@@ -13,9 +13,17 @@ const userSchema = mongoose.Schema(
             required: true,
             trim: true,
         },
-        location: {
+        country: {
             type: String,
-            required: true
+            default: null
+        },
+        city: {
+            type: String,
+            default: null
+        },
+        image: {
+            type: String,
+            default: null
         },
         role: {
             type: Number,
@@ -24,8 +32,28 @@ const userSchema = mongoose.Schema(
         otp: {
             type: String,
             default: null
-        }
-    }
+        },
+        otp_expire: {
+            type: String,
+            default: null
+        },
+        following: {
+            type: Number,
+            default: 0
+        },
+        follower: {
+            type: Number,
+            default: 0
+        },
+        privacyStatus: {
+            type: String,
+            default: null
+        },
+        isdCode: {
+            type: Number,
+            default: 0
+        },
+    }, { timestamps: true }
 )
 
 const User = mongoose.model('User', userSchema);

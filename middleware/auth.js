@@ -15,6 +15,7 @@ const auth = async (req, res, next) => {
                     })
                 }
                 req.user = {
+                    id:Data.id,
                     mobile: Data.mobile,
                     role: Data.role,
                     exp: Data.exp
